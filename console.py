@@ -21,6 +21,7 @@ def isfloat(arg):
     except ValueError:
         return False
 
+
 def type_parser(arg):
     """Check data type of arg and cast it"""
     if arg.isalpha():
@@ -57,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
             input_list = [arg[:match.span()[0]], arg[match.span()[1]:]]
             input_list[1] = re.sub('[",]+', '', input_list[1])
 
-            if re.search(r"[\{]", input_list[1]) is not None: # Searches for a dictionary in the input
+            if re.search(r"[\{]", input_list[1]) is not None:  # Searches for a dictionary in the input
                 input_list[1] = re.sub(',(?=.*\{)', '', input_list[1], 1) # Only substitutes the first comma in the input
                 input_list[1] = re.sub('["]+', '', input_list[1]) # Substitutes "
 
